@@ -450,7 +450,7 @@ EXTRA_DIST = \
     Makefile-bootstrap                      \
     README.md                               \
     .default-version                        \
-    .travis.yml                             \
+    .github/workflows/build.yml             \
     bootstrap                               \
     bootstrap-configure                     \
     $(srcdir)/third_party/nlbuild-autotools \
