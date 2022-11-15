@@ -1,5 +1,11 @@
-[![Build Status][nlfsm-travis-svg]][nlfsm-travis]
+[![Build Status][nlfsm-github-action-svg]][nlfsm-github-action]
 [![Coverage Status][nlfsm-codecov-svg]][nlfsm-codecov]
+
+[nlfsm-github]: https://github.com/nuovations/nlfsm
+[nlfsm-github-action]: https://github.com/nuovations/nlfsm/actions?query=workflow%3Abuild+branch%3Amaster+event%3Apush
+[nlfsm-github-action-svg]: https://github.com/nuovations/nlfsm/actions/workflows/build.yml/badge.svg?branch=master&event=push
+[nlfsm-codecov]: https://codecov.io/gh/nestlabs/nlfsm
+[nlfsm-codecov-svg]: https://codecov.io/gh/nestlabs/nlfsm/branch/master/graph/badge.svg
 
 Nest Labs Finite State Machine
 ==============================
@@ -13,11 +19,6 @@ The implementer need only define a read-only transition table
 consisting of starting state, ending state, and excitation input event
 tuples and a delegate to handle upcalls on various transition table
 events.
-
-[nlfsm-travis]: https://travis-ci.com/nestlabs/nlfsm
-[nlfsm-travis-svg]: https://travis-ci.com/nestlabs/nlfsm.svg?branch=master
-[nlfsm-codecov]: https://codecov.io/gh/nestlabs/nlfsm
-[nlfsm-codecov-svg]: https://codecov.io/gh/nestlabs/nlfsm/branch/master/graph/badge.svg
 
 # Interact
 
