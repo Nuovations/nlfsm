@@ -485,6 +485,9 @@ AC_MSG_NOTICE([
   Target system                             : ${target}
   Target architecture                       : ${target_cpu}
   Target OS                                 : ${target_os}
+  Filtered target system                    : ${nl_filtered_target}
+  Filtered target architecture              : ${nl_filtered_target_cpu}
+  Filtered target OS                        : ${nl_filtered_target_os}
   Cross compiling                           : ${cross_compiling}
   Build shared libraries                    : ${enable_shared}
   Build static libraries                    : ${enable_static}
