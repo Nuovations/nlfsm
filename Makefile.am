@@ -76,6 +76,11 @@ DISTCLEANFILES                            = \
 # .dist-version second, and the .default-version last.
 #
 
+# VERSION_FILE should be and is intentionally an immediate (:=) rather
+# than a deferred (=) variable to ensure the value binds once and only once
+# for a given MAKELEVEL even as .local-version and .dist-version are created
+# during makefile execution.
+
 VERSION_FILE                      := $(if $(wildcard $(builddir)/.local-version),$(builddir)/.local-version,$(if $(wildcard $(srcdir)/.dist-version),$(srcdir)/.dist-version,$(srcdir)/.default-version))
 
 #
@@ -150,7 +155,7 @@ $(distdir)/.dist-version $(builddir)/.local-version:
 # attempt to create git paths to manage the nlunit-test repo. Two
 # directories need to be writable to facilitate this.
 #
-DISTCHECK_CONFIGURE_FLAGS=`chmod u+w .. ../third_party`
+DISTCHECK_CONFIGURE_FLAGS=`chmod u+w ../.. ../../third_party`
 
 dist distcheck: $(BUILT_SOURCES)
 

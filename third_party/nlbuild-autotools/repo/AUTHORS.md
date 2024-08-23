@@ -18,7 +18,7 @@ their employing organization, as appropriate):
 
 * Giuseppe Andreello <gandreello@google.com>
 * Adam Eliot <aeliot@google.com>
-* Grant Erickson <gerickson@google.com>
+* Grant Erickson <gerickson@nuovations.com>
 * Betsy Lichtenberg <betsyl@google.com>
 * Robert Szewczyk <szewczyk@google.com>
 * Rob Walker <rwalker@rwalker.com>

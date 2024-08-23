@@ -182,6 +182,7 @@ AC_CHECK_TOOL(STRIP, strip)
 
 # Check for other host tools.
 
+AC_PROG_EGREP
 AC_PROG_INSTALL
 AC_PROG_LN_S
 
@@ -240,6 +241,11 @@ NL_ENABLE_OPTIMIZATION([yes])
 AM_CONDITIONAL([NLFSM_BUILD_OPTIMIZED], [test "${nl_cv_build_optimized}" = "yes"])
 
 #
+# Treat Compiler Warnings as Errors
+#
+NL_ENABLE_WERROR([no])
+
+#
 # Tests
 #
 AC_MSG_NOTICE([checking whether to build tests])
@@ -286,7 +292,7 @@ AC_PATH_PROG([PKG_CONFIG],[pkg-config])
 # Nlassert
 #
 
-NL_WITH_PACKAGE(
+NL_WITH_REQUIRED_INTERNAL_PACKAGE(
     [Nlassert],
     [NLASSERT],
     [nlassert],
@@ -340,7 +346,7 @@ AM_CONDITIONAL([NLFSM_WITH_NLASSERT_INTERNAL], [test "${nl_with_nlassert}" = "in
 #
 
 if test "${nl_cv_build_tests}" = "yes"; then
-    NL_WITH_PACKAGE(
+    NL_WITH_REQUIRED_INTERNAL_PACKAGE(
         [Nlunit-test],
         [NLUNIT_TEST],
         [nlunit_test],
@@ -393,7 +399,6 @@ AM_CONDITIONAL([NLFSM_WITH_NLUNIT_TEST_INTERNAL], [test "${nl_with_nlunit_test}"
 # Check for headers
 #
 AC_HEADER_STDBOOL
-AC_HEADER_STDC
 
 AC_CHECK_HEADERS([stdint.h])
 AC_CHECK_HEADERS([string.h])
@@ -430,7 +435,7 @@ CPPFLAGS="${CPPFLAGS} ${NLUNIT_TEST_CPPFLAGS}"
 LDFLAGS="${LDFLAGS} ${NLUNIT_TEST_LDFLAGS}"
 LIBS="${LIBS} ${NLUNIT_TEST_LIBS}"
 
-# Add any code coverage CPPFLAGS and LIBS
+# Add any code coverage CPPFLAGS, LDFLAGS, and LIBS
 
 CPPFLAGS="${CPPFLAGS} ${NL_COVERAGE_CPPFLAGS}"
 LDFLAGS="${LDFLAGS} ${NL_COVERAGE_LDFLAGS}"
@@ -447,7 +452,6 @@ NL_RESTORE_WERROR
 if test "${nl_with_nlassert}" = "internal"; then
     AC_CONFIG_SUBDIRS([third_party/nlassert/repo])
 fi
-
 
 if test "${nl_with_nlunit_test}" = "internal"; then
     AC_CONFIG_SUBDIRS([third_party/nlunit-test/repo])
@@ -486,6 +490,9 @@ AC_MSG_NOTICE([
   Target system                             : ${target}
   Target architecture                       : ${target_cpu}
   Target OS                                 : ${target_os}
+  Filtered target system                    : ${nl_filtered_target}
+  Filtered target architecture              : ${nl_filtered_target_cpu}
+  Filtered target OS                        : ${nl_filtered_target_os}
   Cross compiling                           : ${cross_compiling}
   Build shared libraries                    : ${enable_shared}
   Build static libraries                    : ${enable_static}

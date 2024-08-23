@@ -1,3 +1,57 @@
+1.7.8 (2024-08-02)
+
+        * Added GitHub Workflow Action continuous integration (CI)
+          support.
+
+        * Addressed an issue in which
+          'automake/{pre/macros,post/rules}/foreigndeps.am' were not
+          included in the package distribution.
+
+1.7.7 (2024-08-02)
+
+        * Updated the autotools packages to the following versions:
+
+            Package	Version
+
+            autoconf	2.72
+            automake	1.17
+            coreutils	9.5
+            libtool	2.4.7
+            m4	        1.4.19
+            make	4.4.1
+
+        * Auxiliary build scripts / tools in third_party/autoconf are
+          updated from automake-1.17 and libtool-2.4.7.
+
+        * The example/configure.ac is updated for autoconf-2.72.
+
+1.7.6 (2024-08-02)
+
+        * Updated the following autoconf archive M4 macro files:
+
+          * ax_compare_version.m4
+          * ax_cxx_compile_stdcxx.m4
+          * ax_cxx_compile_stdcxx_0x.m4
+          * ax_cxx_compile_stdcxx_11.m4
+          * ax_cxx_compile_stdcxx_14.m4
+          * ax_jni_include_dir.m4
+          * ax_pthread.m4
+
+        * Added the following autoconf archive M4 macro file:
+
+          * ax_cxx_compile_stdcxx_17.m4
+
+1.7.5 (2021-03-02)
+
+        * Deduplicate PRETTY_FILES when using the default definition.
+
+1.7.4 (2020-05-18)
+
+        * Ensure that 'make help' displays help for generated make
+          files in addition to the bootstrap make file for the all,
+          check, coverage, dist, distcheck, doc, docdist, install,
+          install-headers, manifest, repos, and clean-repos targets.
+
 1.7.3 (2020-05-11)
 
         * Addressed an issue in which NL_ENABLE_COVERAGE,
