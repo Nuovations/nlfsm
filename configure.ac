@@ -287,7 +287,7 @@ AC_PATH_PROG([PKG_CONFIG],[pkg-config])
 # Nlassert
 #
 
-NL_WITH_PACKAGE(
+NL_WITH_REQUIRED_INTERNAL_PACKAGE(
     [Nlassert],
     [NLASSERT],
     [nlassert],
@@ -341,7 +341,7 @@ AM_CONDITIONAL([NLFSM_WITH_NLASSERT_INTERNAL], [test "${nl_with_nlassert}" = "in
 #
 
 if test "${nl_cv_build_tests}" = "yes"; then
-    NL_WITH_PACKAGE(
+    NL_WITH_REQUIRED_INTERNAL_PACKAGE(
         [Nlunit-test],
         [NLUNIT_TEST],
         [nlunit_test],
