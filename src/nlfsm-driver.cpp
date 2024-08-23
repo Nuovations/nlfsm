@@ -132,8 +132,6 @@ Driver::Driver(Machine &inMachine, Delegate::Base *inDelegate) :
 void
 Driver::SetMachine(Machine &inMachine)
 {
-    nlCHECK(&inMachine != NULL);
-
     mMachine = &inMachine;
 }
 

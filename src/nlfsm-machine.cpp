@@ -265,9 +265,6 @@ Machine::FindTransition(const State & inState, const Event & inEvent) const
     const Transition * end = mFirstTransition + mCount;
     const FindTransitionPredicate theFinder(inState, inEvent);
 
-    nlCHECK(&inState != NULL);
-    nlCHECK(&inEvent != NULL);
-
     while ((start != end) && !bool(theFinder(start))) {
         ++start;
     }
