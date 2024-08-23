@@ -394,7 +394,6 @@ AM_CONDITIONAL([NLFSM_WITH_NLUNIT_TEST_INTERNAL], [test "${nl_with_nlunit_test}"
 # Check for headers
 #
 AC_HEADER_STDBOOL
-AC_HEADER_STDC
 
 AC_CHECK_HEADERS([stdint.h])
 AC_CHECK_HEADERS([string.h])
