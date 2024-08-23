@@ -121,6 +121,7 @@ am__aclocal_m4_deps = $(top_srcdir)/third_party/nlbuild-autotools/repo/autoconf/
 	$(top_srcdir)/third_party/nlbuild-autotools/repo/autoconf/m4/nl_enable_docs.m4 \
 	$(top_srcdir)/third_party/nlbuild-autotools/repo/autoconf/m4/nl_enable_optimization.m4 \
 	$(top_srcdir)/third_party/nlbuild-autotools/repo/autoconf/m4/nl_enable_tests.m4 \
+	$(top_srcdir)/third_party/nlbuild-autotools/repo/autoconf/m4/nl_enable_werror.m4 \
 	$(top_srcdir)/third_party/nlbuild-autotools/repo/autoconf/m4/nl_filtered_canonical.m4 \
 	$(top_srcdir)/third_party/nlbuild-autotools/repo/autoconf/m4/nl_werror.m4 \
 	$(top_srcdir)/third_party/nlbuild-autotools/repo/autoconf/m4/nl_with_package.m4 \
