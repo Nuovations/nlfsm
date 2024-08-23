@@ -26,7 +26,7 @@
 #
 # Declare autoconf version requirements
 #
-AC_PREREQ([2.68])
+AC_PREREQ([2.72])
 
 #
 # Initialize autoconf for the package
@@ -178,6 +178,7 @@ AC_CHECK_TOOL(STRIP, strip)
 
 # Check for other host tools.
 
+AC_PROG_EGREP
 AC_PROG_INSTALL
 AC_PROG_LN_S
 
@@ -236,6 +237,11 @@ NL_ENABLE_OPTIMIZATION([yes])
 AM_CONDITIONAL([@PACKAGE_SHORT_UPPER@_BUILD_OPTIMIZED], [test "${nl_cv_build_optimized}" = "yes"])
 
 #
+# Treat Compiler Warnings as Errors
+#
+NL_ENABLE_WERROR([no])
+
+#
 # Tests
 #
 AC_MSG_NOTICE([checking whether to build tests])
@@ -282,7 +288,7 @@ AC_PATH_PROG([PKG_CONFIG],[pkg-config])
 # #
 #
 # if test "${nl_cv_build_tests}" = "yes"; then
-#     NL_WITH_PACKAGE(
+#     NL_WITH_REQUIRED_INTERNAL_PACKAGE(
 #         [Nlunit-test],
 #         [NLUNIT_TEST],
 #         [nlunit_test],
@@ -335,7 +341,6 @@ AC_PATH_PROG([PKG_CONFIG],[pkg-config])
 # Check for headers
 #
 AC_HEADER_STDBOOL
-AC_HEADER_STDC
 
 AC_CHECK_HEADERS([stdint.h])
 AC_CHECK_HEADERS([string.h])
@@ -423,6 +428,9 @@ AC_MSG_NOTICE([
   Target system                               : ${target}
   Target architecture                         : ${target_cpu}
   Target OS                                   : ${target_os}
+  Filtered target system                      : ${nl_filtered_target}
+  Filtered target architecture                : ${nl_filtered_target_cpu}
+  Filtered target OS                          : ${nl_filtered_target_os}
   Cross compiling                             : ${cross_compiling}
   Build shared libraries                      : ${enable_shared}
   Build static libraries                      : ${enable_static}
