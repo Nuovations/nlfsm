@@ -103,15 +103,18 @@ NL_FILTERED_CANONICAL_HOST
 NL_FILTERED_CANONICAL_TARGET
 
 #
-# Configure automake with the desired options, indicating that this is not
-# a native GNU package, that we want "silent" build rules, and that we want
-# objects built in the same subdirectory as their source rather than collapsed
-# together at the top-level directory.
+# Configure automake with the desired options, indicating that this is
+# not a native GNU package, that we want "silent" build rules, and
+# that we want objects built in the same subdirectory as their source
+# rather than collapsed than collapsed together at the top-level
+# directory, that we want support for the tar PAX format for 'make
+# dist', and that we want xz-compressed distribution archives in
+# addition to gzip-compressed distribution archives.
 #
 # Disable silent build rules by either passing --disable-silent-rules to
 # configure or passing V=1 to make
 #
-AM_INIT_AUTOMAKE([1.14 foreign silent-rules subdir-objects tar-pax])
+AM_INIT_AUTOMAKE([1.14 foreign silent-rules subdir-objects tar-pax dist-xz])
 
 #
 # Silent build rules requires at least automake-1.11. Employ
